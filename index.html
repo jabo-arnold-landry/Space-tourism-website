@@ -14,8 +14,42 @@
 
     <title>Frontend Mentor | Space tourism website</title>
   </head>
-  <body>
-    <h1>initial commit</h1>
+  <body
+    class="bg-[url('/assets/home/background-home-mobile.jpg')] h-screen bg-cover bg-no-repeat sm:bg-[url('/assets/home/background-home-tablet.jpg')] lg:bg-[url('/assets/home/background-home-desktop.jpg')]"
+  >
+    <header class="mt-8 mx-7">
+      <nav class="flex justify-between sm:items-center mx-2">
+        <img src="/assets/shared/logo.svg" alt="logo image" class="size-10" />
+        <div class="flex flex-col justify-end items-end px-4 gap-4">
+          <img
+            src="/assets/shared/icon-hamburger.svg"
+            alt="icon-hamburger"
+            class="block sm:hidden"
+          />
+          <ul class="flex flex-col items-end sm:flex-row gap-2 sm:gap-4">
+            <li>00 home</li>
+            <li>01 destination</li>
+            <li>02 crew</li>
+            <li>03 technology</li>
+          </ul>
+        </div>
+      </nav>
+      <section>
+        <div>
+          <p>SO, YOU WANT TO TRAVEL TO</p>
+          <h1>SPACE</h1>
+          <p>
+            Let's face it: if you want to go to space. you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back and relax because we'll give a truly out of this world
+            experience!
+          </p>
+        </div>
+        <div>
+          <p>EXPLORE</p>
+        </div>
+      </section>
+    </header>
     <script src="/src//Javascript/index.js" type="module"></script>
   </body>
 </html>

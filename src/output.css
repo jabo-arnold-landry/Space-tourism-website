@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -6,6 +7,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(70.4% 0.191 22.216);
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-white: #fff;
+    --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -158,4 +163,272 @@
     display: none !important;
   }
 }
-@layer utilities;
+@layer utilities {
+  .mx-2 {
+    margin-inline: calc(var(--spacing) * 2);
+  }
+  .mx-7 {
+    margin-inline: calc(var(--spacing) * 7);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
+  }
+  .table {
+    display: table;
+  }
+  .size-10 {
+    width: calc(var(--spacing) * 10);
+    height: calc(var(--spacing) * 10);
+  }
+  .size-20 {
+    width: calc(var(--spacing) * 20);
+    height: calc(var(--spacing) * 20);
+  }
+  .h-\[2\%\] {
+    height: 2%;
+  }
+  .h-\[2\] {
+    height: 2;
+  }
+  .h-\[45\%\] {
+    height: 45%;
+  }
+  .h-\[100vh\] {
+    height: 100vh;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .h-lvh {
+    height: 100lvh;
+  }
+  .h-screen {
+    height: 100vh;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .w-screen {
+    width: 100vw;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+  .justify-around {
+    justify-content: space-around;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .self-center {
+    align-self: center;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .bg-red-400 {
+    background-color: var(--color-red-400);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-\[url\(\'\'\)\] {
+    background-image: url('');
+  }
+  .bg-\[url\(\'\/a\'\)\] {
+    background-image: url('/a');
+  }
+  .bg-\[url\(\'\/ass\'\)\] {
+    background-image: url('/ass');
+  }
+  .bg-\[url\(\'\/assest\'\)\] {
+    background-image: url('/assest');
+  }
+  .bg-\[url\(\'\/assets\/\'\)\] {
+    background-image: url('/assets/');
+  }
+  .bg-\[url\(\'\/assets\/home\/\'\)\] {
+    background-image: url('/assets/home/');
+  }
+  .bg-\[url\(\'\/assets\/home\/back\'\)\] {
+    background-image: url('/assets/home/back');
+  }
+  .bg-\[url\(\'\/assets\/home\/background-home-des\.jpg\'\)\] {
+    background-image: url('/assets/home/background-home-des.jpg');
+  }
+  .bg-\[url\(\'\/assets\/home\/background-home-desktop\.jpg\'\)\] {
+    background-image: url('/assets/home/background-home-desktop.jpg');
+  }
+  .bg-\[url\(\'\/assets\/home\/background-home-mobile\.\'\)\] {
+    background-image: url('/assets/home/background-home-mobile.');
+  }
+  .bg-\[url\(\'\/assets\/home\/background-home-mobile\.jpg\'\)\] {
+    background-image: url('/assets/home/background-home-mobile.jpg');
+  }
+  .bg-\[url\(\'\/assets\/home\/background-home-mobile\.jpgs\'\)\] {
+    background-image: url('/assets/home/background-home-mobile.jpgs');
+  }
+  .bg-\[url\(\'\/assets\/home\/background0\'\)\] {
+    background-image: url('/assets/home/background0');
+  }
+  .bg-\[url\(\'\/images\/bg-today-small\.svg\'\)\] {
+    background-image: url('/images/bg-today-small.svg');
+  }
+  .bg-\[url\(\)\] {
+    background-image: url();
+  }
+  .bg-contain {
+    background-size: contain;
+  }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-center {
+    background-position: center;
+  }
+  .bg-left {
+    background-position: left;
+  }
+  .bg-right {
+    background-position: right;
+  }
+  .bg-no-repeat {
+    background-repeat: no-repeat;
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .sm\:block {
+    @media (width >= 40rem) {
+      display: block;
+    }
+  }
+  .sm\:flex {
+    @media (width >= 40rem) {
+      display: flex;
+    }
+  }
+  .sm\:hidden {
+    @media (width >= 40rem) {
+      display: none;
+    }
+  }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
+    }
+  }
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
+    }
+  }
+  .sm\:gap-4 {
+    @media (width >= 40rem) {
+      gap: calc(var(--spacing) * 4);
+    }
+  }
+  .sm\:bg-\[url\(\'\/assets\/home\/background-home-\.jpg\'\)\] {
+    @media (width >= 40rem) {
+      background-image: url('/assets/home/background-home-.jpg');
+    }
+  }
+  .sm\:bg-\[url\(\'\/assets\/home\/background-home-mobile\.jpg\'\)\] {
+    @media (width >= 40rem) {
+      background-image: url('/assets/home/background-home-mobile.jpg');
+    }
+  }
+  .sm\:bg-\[url\(\'\/assets\/home\/background-home-tab\.jpg\'\)\] {
+    @media (width >= 40rem) {
+      background-image: url('/assets/home/background-home-tab.jpg');
+    }
+  }
+  .sm\:bg-\[url\(\'\/assets\/home\/background-home-tablet\.jpg\'\)\] {
+    @media (width >= 40rem) {
+      background-image: url('/assets/home/background-home-tablet.jpg');
+    }
+  }
+  .lg\:bg-\[url\(\'\/assets\/home\/background-home-desk\.jpg\'\)\] {
+    @media (width >= 64rem) {
+      background-image: url('/assets/home/background-home-desk.jpg');
+    }
+  }
+  .lg\:bg-\[url\(\'\/assets\/home\/background-home-desktop\.jpg\'\)\] {
+    @media (width >= 64rem) {
+      background-image: url('/assets/home/background-home-desktop.jpg');
+    }
+  }
+  .lg\:bg-\[url\(\'\/assets\/home\/background-home-mobile\.jpg\'\)\] {
+    @media (width >= 64rem) {
+      background-image: url('/assets/home/background-home-mobile.jpg');
+    }
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-outline-style: solid;
+    }
+  }
+}
