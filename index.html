@@ -32,18 +32,38 @@
           <ul
             class="flex flex-col items-end sm:flex-row gap-2 sm:gap-4 backdrop-blur-2xl text-white lg:px-32 lg:py-7 md:gap-10"
           >
-            <a href="#" class="uppercase font-extralight text-sm flex gap-2"
-              ><span>00</span> home</a
-            >
-            <a href="#" class="uppercase font-extralight text-sm flex gap-2"
-              ><span>01</span> destination</a
-            >
-            <a href="#" class="uppercase font-extralight text-sm flex gap-2"
-              ><span>02</span> crew</a
-            >
-            <a href="#" class="uppercase font-extralight text-sm flex gap-2"
-              ><span>03</span> technology</a
-            >
+            <a
+              href="#"
+              class="uppercase font-extralight text-sm flex gap-2 relative py-2 group"
+              ><span>00</span> home
+              <span
+                class="absolute top-14 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
+              ></span>
+            </a>
+            <a
+              href="#"
+              class="uppercase font-extralight text-sm flex gap-2 relative py-2 group"
+              ><span>01</span> destination
+              <span
+                class="absolute top-14 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
+              ></span>
+            </a>
+            <a
+              href="#"
+              class="uppercase font-extralight text-sm flex gap-2 relative py-2 group"
+              ><span>02</span> crew
+              <span
+                class="absolute top-14 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
+              ></span>
+            </a>
+            <a
+              href="#"
+              class="uppercase font-extralight text-sm flex gap-2 relative py-2 group"
+              ><span>03</span> technology
+              <span
+                class="absolute top-14 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
+              ></span>
+            </a>
           </ul>
         </div>
       </nav>
@@ -66,9 +86,15 @@
           </p>
         </section>
 
-        <div class="text-black bg-white py-20 px-14 rounded-full">
+        <a
+          href="#"
+          class="relative text-black bg-white py-20 px-14 rounded-full inline-block cursor-pointer group"
+        >
           <p class="text-lg">EXPLORE</p>
-        </div>
+          <span
+            class="absolute inset-0 rounded-full bg-white/50 scale-0 group-hover:scale-150 transition-transform duration-500 -z-10"
+          ></span>
+        </a>
       </div>
     </section>
     <script src="/src//Javascript/index.js" type="module"></script>
