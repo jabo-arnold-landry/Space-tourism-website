@@ -20,17 +20,30 @@
     <header class="mt-8 mx-7">
       <nav class="flex justify-between sm:items-center mx-2">
         <img src="/assets/shared/logo.svg" alt="logo image" class="size-10" />
+        <div
+          class="opacity-0 lg:opacity-100 h-[0.4px] w-full bg-gray-400"
+        ></div>
         <div class="flex flex-col justify-end items-end px-4 gap-4">
           <img
             src="/assets/shared/icon-hamburger.svg"
             alt="icon-hamburger"
             class="block sm:hidden"
           />
-          <ul class="flex flex-col items-end sm:flex-row gap-2 sm:gap-4">
-            <li>00 home</li>
-            <li>01 destination</li>
-            <li>02 crew</li>
-            <li>03 technology</li>
+          <ul
+            class="flex flex-col items-end sm:flex-row gap-2 sm:gap-4 backdrop-blur-2xl text-white lg:px-32 lg:py-7 md:gap-10"
+          >
+            <a href="#" class="uppercase font-extralight text-sm flex gap-2"
+              ><span>00</span> home</a
+            >
+            <a href="#" class="uppercase font-extralight text-sm flex gap-2"
+              ><span>01</span> destination</a
+            >
+            <a href="#" class="uppercase font-extralight text-sm flex gap-2"
+              ><span>02</span> crew</a
+            >
+            <a href="#" class="uppercase font-extralight text-sm flex gap-2"
+              ><span>03</span> technology</a
+            >
           </ul>
         </div>
       </nav>
