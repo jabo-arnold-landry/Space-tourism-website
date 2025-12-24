@@ -1,4 +1,5 @@
 const navLinkSection = document.querySelector("#nav-links");
+const destinationSwitcherBtns = document.querySelector("#destination-switcher");
 
 const linkList = [
   { link: "00 home", url: "#" },
@@ -6,6 +7,7 @@ const linkList = [
   { link: "02 crew", url: "#" },
   { link: "03 technology", url: "#" },
 ];
+const destinationList = ["moon", "mars", "europa", "titian"];
 
 navLinkSection.textContent = "";
 
@@ -23,3 +25,30 @@ linkList.forEach((links) => {
                                     </span>
                                 </a>`;
 });
+
+function destinationSwitcherBtnsCreation() {
+  destinationSwitcherBtns.textContent = "";
+  const btnDocFragment = document.createDocumentFragment();
+
+  destinationList.forEach((destination) => {
+    const btn = document.createElement("button");
+
+    btn.classList.add(
+      "text-gray-400",
+      "uppercase",
+      "font-light",
+      "text-sm",
+      "cursor-pointer",
+      "group",
+      "relative"
+    );
+    btn.innerHTML = `${destination}
+                      <span
+                        class="absolute top-6 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
+                      ></span>`;
+    btnDocFragment.append(btn);
+  });
+  destinationSwitcherBtns.append(btnDocFragment);
+}
+
+destinationSwitcherBtnsCreation();
