@@ -57,24 +57,24 @@ function destinationSwitcherBtnsCreation() {
 }
 
 destinationSwitcherBtnsCreation();
-
 async function fetchingFileData() {
   const gettingFile = await fetch("/data.json");
   const dataFromFile = await gettingFile.json();
-
-  dataFromFile["index"] = 0;
-  if (!localStorage.getItem("locations"))
-    localStorage.setItem("locations", JSON.stringify(dataFromFile));
+  return dataFromFile;
 }
 
-fetchingFileData();
+const destinationData = localStorage.getItem("destinations");
 
-const locations = JSON.parse(localStorage.getItem("locations"));
+//get current index to display last visited page in localstorage
+const currIndex = destinationData ? JSON.parse(destinationData)["index"] : 0;
 
-function displayDestanationDetails(dataSet = locations) {
+function displayDestanationDetails(dataSet, index) {
   const { destinations } = dataSet;
-  const { index } = dataSet;
   const destanationData = destinations[index];
+
+  highlightingCurrentBtn(index);
+
+  localStorage.setItem("destinations", JSON.stringify({ destinations, index }));
 
   destinationDetailsSection.innerHTML = "";
   const {
@@ -110,23 +110,27 @@ function displayDestanationDetails(dataSet = locations) {
             </div>`;
 }
 
-displayDestanationDetails();
+const dataSet = await fetchingFileData();
+displayDestanationDetails(dataSet, currIndex);
 
 //event listeners section
 
 destinationSwitcherBtns.addEventListener("click", (e) => {
-  const spans = document.querySelectorAll("span");
-  spans.forEach((span) => span.classList.add("scale-x-0"));
-
   if (e.target.matches("button")) {
-    let selectedIndex = e.target.dataset.index;
+    const id = e.target.dataset.index;
 
-    locations["index"] = selectedIndex;
-    localStorage.setItem("locations", JSON.stringify(locations));
-
-    const selectedBtnSpan = e.target.querySelector("span");
-    selectedBtnSpan.classList.remove("scale-x-0");
-
-    displayDestanationDetails(locations);
+    displayDestanationDetails(dataSet, id);
   }
 });
+
+function highlightingCurrentBtn(index) {
+  const btns = document.querySelectorAll("button");
+
+  const spans = destinationSwitcherBtns.querySelectorAll("span");
+
+  spans.forEach((span) => span.classList.add("scale-x-0"));
+
+  const selectedBtnSpan = btns[index].querySelector("span");
+
+  selectedBtnSpan.classList.remove("scale-x-0");
+}
