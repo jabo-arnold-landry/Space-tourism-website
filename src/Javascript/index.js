@@ -57,16 +57,17 @@ function destinationSwitcherBtnsCreation() {
 }
 
 destinationSwitcherBtnsCreation();
-async function fetchingFileData() {
+export async function fetchingFileData() {
   const gettingFile = await fetch("/data.json");
   const dataFromFile = await gettingFile.json();
   return dataFromFile;
 }
 
-const destinationData = localStorage.getItem("destinations");
-
-//get current index to display last visited page in localstorage
-const currIndex = destinationData ? JSON.parse(destinationData)["index"] : 0;
+function itemdINdex(itemName) {
+  const destinationData = localStorage.getItem(itemName);
+  //get current index to display last visited page in localstorage
+  return destinationData ? JSON.parse(destinationData)["index"] : 0;
+}
 
 function displayDestanationDetails(dataSet, index) {
   const { destinations } = dataSet;
@@ -110,8 +111,9 @@ function displayDestanationDetails(dataSet, index) {
             </div>`;
 }
 
+const destinationIndex = itemdINdex("destinations");
 const dataSet = await fetchingFileData();
-displayDestanationDetails(dataSet, currIndex);
+displayDestanationDetails(dataSet, destinationIndex);
 
 //event listeners section
 
