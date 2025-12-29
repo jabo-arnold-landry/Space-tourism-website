@@ -531,6 +531,13 @@
       }
     }
   }
+  .group-hover\:bg-white {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        background-color: var(--color-white);
+      }
+    }
+  }
   .hover\:bg-white {
     &:hover {
       @media (hover: hover) {
