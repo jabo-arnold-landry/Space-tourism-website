@@ -45,51 +45,16 @@
 
       <section class="grid gap-2 md:flex items-center">
         <section class="grid gap-7 sm:flex">
-          <ul id="" class="flex gap-7 sm:flex-col items-start justify-start">
-            <button class="border border-white px-4 py-2 rounded-full">
-              1
-            </button>
-            <button class="border border-white px-4 py-2 rounded-full">
-              2
-            </button>
-            <button class="border border-white px-4 py-2 rounded-full">
-              3
-            </button>
-          </ul>
+          <ul
+            id="technology-list"
+            class="flex gap-7 sm:flex-col items-start justify-start"
+          ></ul>
 
-          <section class="grid gap-4" id="">
-            <div>
-              <p class="text-gray-400 text-base capitalize">
-                The terminology...
-              </p>
-              <strong class="font-bold text-5xl">Launch vehicle</strong>
-            </div>
-            <p class="max-w-lg md:max-w-160 text-gray-400">
-              Space capsule A space capsule is an often-crewed spacecraft that
-              uses a blunt-body reentry capsule to reenter the Earth's
-              atmosphere without wings. Our capsule is where you'll spend your
-              time during the flight. It includes a space gym, cinema, and
-              plenty of other activities to keep you entertained.
-            </p>
-          </section>
+          <section class="grid gap-4" id="technology-details"></section>
         </section>
-        <picture>
-          <source
-            media="(min-width:320 )"
-            srcset="/assets/technology/image-launch-vehicle-landscape.jpg"
-          />
-          <source
-            media="(min-width:320 )"
-            srcset="/assets/technology/image-launch-vehicle-portrait.jpg"
-          />
-          <img
-            src="/assets/technology/image-launch-vehicle-portrait.jpg"
-            alt="img"
-            class="size-80"
-          />
-        </picture>
+        <picture id="picture-tag"></picture>
       </section>
     </main>
   </body>
-  <script type="module" src="/src/Javascript/index.js"></script>
+  <script type="module" src="/src/Javascript/technology.js"></script>
 </html>
