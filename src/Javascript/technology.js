@@ -1,4 +1,9 @@
-import { dataSet, itemdINdex } from "./index.js";
+import {
+  dataSet,
+  highlightingClickedBtn,
+  itemdINdex,
+  triggerClickedBtn,
+} from "./index.js";
 
 const technologyDetails = document.querySelector("#technology-details");
 const technologyList = document.querySelector("#technology-list");
@@ -10,7 +15,19 @@ function technologyListCreation(nbr = 3) {
   for (let i = 1; i <= nbr; i++) {
     const btn = document.createElement("button");
     btn.textContent = i;
-    btn.classList.add("border", "border-white", "px-4", "py-2", "rounded-full");
+    btn.classList.add(
+      "border",
+      "border-white",
+      "px-4",
+      "py-2",
+      "text-gray-300",
+      "rounded-full",
+      "hover:bg-white",
+      "hover:text-gray-600",
+      "transition-colors",
+      "delay-300",
+      "cursor-pointer"
+    );
     btnFragment.append(btn);
   }
   return technologyList.append(btnFragment);
@@ -21,7 +38,10 @@ function technologyPopulation(dataSet, index) {
   const technologyData = technology[index];
 
   localStorage.setItem("technology", JSON.stringify({ technology, index }));
+
   technologyListCreation(technology.length);
+  highlightingClickedBtn(technologyList, index);
+
   technologyDetails.innerHTML = "";
   const {
     name,
@@ -56,3 +76,8 @@ function technologyPopulation(dataSet, index) {
 
 const technologyId = itemdINdex("technology");
 technologyPopulation(dataSet, technologyId);
+
+technologyList.addEventListener("click", function (e) {
+  if (e.target.matches("button"))
+    triggerClickedBtn(this, e.target, technologyPopulation);
+});
