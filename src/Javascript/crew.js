@@ -1,4 +1,9 @@
-import { dataSet, itemdINdex } from "./index.js";
+import {
+  dataSet,
+  itemdINdex,
+  triggerClickedBtn,
+  highlightingClickedBtn,
+} from "./index.js";
 const staffMembersSection = document.querySelector("#staff-members-section");
 
 function crewPopulation(dataSet, index) {
@@ -51,25 +56,14 @@ function crewPopulation(dataSet, index) {
           class="w-7/12 sm:w-56"
           id="staff-image"
         />`;
-  highlightingClickedCircle(index);
+  highlightingClickedBtn(staffMembersSection, index);
 }
 
 const currIndex = itemdINdex("crew");
 crewPopulation(dataSet, currIndex);
 
-staffMembersSection.addEventListener("click", (e) => {
+staffMembersSection.addEventListener("click", function (e) {
   if (e.target.matches("button")) {
-    let btns = staffMembersSection.getElementsByTagName("button");
-    const arr = [...btns];
-    const index = arr.findIndex((node) => node === e.target);
-    crewPopulation(dataSet, index);
+    triggerClickedBtn(this, e.target, crewPopulation);
   }
 });
-
-function highlightingClickedCircle(index) {
-  const btns = staffMembersSection.querySelectorAll("button");
-
-  btns.forEach((btn) => btn.classList.remove("bg-white"));
-
-  btns[index].classList.add("bg-white", "scale-105");
-}

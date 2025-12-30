@@ -35,4 +35,20 @@ function itemdINdex(itemName) {
   //get current index to display last visited page in localstorage
   return destinationData ? JSON.parse(destinationData)["index"] : 0;
 }
-export {dataSet, itemdINdex}
+
+function triggerClickedBtn(element, btn, cb) {
+  let btns = element.getElementsByTagName("button");
+  const arr = [...btns];
+  const index = arr.findIndex((node) => node === btn);
+  cb(dataSet, index);
+}
+
+function highlightingClickedBtn(element, index) {
+  const btns = element.querySelectorAll("button");
+
+  btns.forEach((btn) => btn.classList.remove("bg-white", "text-gray-600"));
+
+  btns[index].classList.add("bg-white", "text-gray-600");
+}
+
+export { dataSet, itemdINdex, triggerClickedBtn, highlightingClickedBtn };
