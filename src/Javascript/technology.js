@@ -70,7 +70,7 @@ function technologyPopulation(dataSet, index) {
           <img
             src="${portrait}"
             alt="img"
-            class="size-80"
+            class="size-96"
           />`;
 }
 
