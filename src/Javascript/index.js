@@ -1,10 +1,10 @@
 const navLinkSection = document.querySelector("#nav-links");
 
 const linkList = [
-  { link: "00 home", url: "#" },
-  { link: "01 destination", url: "#" },
-  { link: "02 crew", url: "#" },
-  { link: "03 technology", url: "#" },
+  { link: "00 home", url: "/" },
+  { link: "01 destination", url: "/src/pages/crew-commander.html" },
+  { link: "02 crew", url: "/src/pages/destination-europa.html" },
+  { link: "03 technology", url: "technology-capsule.html" },
 ];
 
 navLinkSection.textContent = "";
