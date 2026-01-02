@@ -1,9 +1,10 @@
 import {
   dataSet,
-  itemdINdex,
   triggerClickedBtn,
   highlightingClickedBtn,
 } from "./index.js";
+import { itemdINdex } from "./index.js";
+
 const staffMembersSection = document.querySelector("#staff-members-section");
 
 function crewPopulation(dataSet, index) {

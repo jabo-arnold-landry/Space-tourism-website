@@ -1,9 +1,9 @@
 import {
   dataSet,
   highlightingClickedBtn,
-  itemdINdex,
   triggerClickedBtn,
 } from "./index.js";
+import { itemdINdex } from "./index.js";
 
 const technologyDetails = document.querySelector("#technology-details");
 const technologyList = document.querySelector("#technology-list");
