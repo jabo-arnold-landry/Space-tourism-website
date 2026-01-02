@@ -2,9 +2,10 @@ const destinationSwitcherBtns = document.querySelector("#destination-switcher");
 const destinationDetailsSection = document.querySelector("#dest-details");
 const imgDestination = document.querySelector("#dest-img");
 
-import { dataSet, itemdINdex } from "./index.js";
+import { dataSet, itemdINdex, highlightingCurrentLink } from "./index.js";
 const destinationList = ["moon", "mars", "europa", "titian"];
 
+highlightingCurrentLink("a", 1);
 function destinationSwitcherBtnsCreation() {
   destinationSwitcherBtns.textContent = "";
   const btnDocFragment = document.createDocumentFragment();

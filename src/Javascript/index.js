@@ -2,8 +2,8 @@ const navLinkSection = document.querySelector("#nav-links");
 
 const linkList = [
   { link: "00 home", url: "/" },
-  { link: "01 destination", url: "/src/pages/crew-commander.html" },
-  { link: "02 crew", url: "/src/pages/destination-europa.html" },
+  { link: "01 destination", url: "/src/pages/destination-europa.html" },
+  { link: "02 crew", url: "/src/pages/crew-commander.html" },
   { link: "03 technology", url: "technology-capsule.html" },
 ];
 
@@ -22,6 +22,70 @@ linkList.forEach((links) => {
                                     </span>
                                 </a>`;
 });
+
+function highlightingCurrentLink(seletor, index) {
+  const btns = document.querySelectorAll(seletor);
+
+  // Get all the underline spans (the last span in each anchor)
+  btns.forEach((btn) => {
+    const spans = btn.querySelectorAll("span");
+    const underlineSpan = spans[spans.length - 1]; // Get the last span (the underline)
+    underlineSpan.classList.remove("scale-x-100");
+    underlineSpan.classList.add("scale-x-0");
+  });
+
+  // Highlight the selected button's underline
+  const selectedBtn = btns[index];
+  const selectedSpans = selectedBtn.querySelectorAll("span");
+  const selectedUnderlineSpan = selectedSpans[selectedSpans.length - 1];
+
+  selectedUnderlineSpan.classList.remove("scale-x-0");
+  selectedUnderlineSpan.classList.add("scale-x-100");
+}
+
+// Function to detect current page and highlight the appropriate link
+function detectCurrentPage() {
+  const currentPath = window.location.pathname;
+
+  // Find matching index in linkList
+  let currentIndex = 0; // Default to home
+
+  linkList.forEach((item, index) => {
+    // Normalize paths for comparison
+    const itemUrl = item.url.startsWith("/") ? item.url : "/" + item.url;
+
+    // Check if current path matches or includes the link URL
+    if (
+      currentPath === itemUrl ||
+      (itemUrl !== "/" && currentPath.includes(itemUrl)) ||
+      (currentPath === "/" && itemUrl === "/") ||
+      (currentPath.endsWith("/index.html") && itemUrl === "/")
+    ) {
+      currentIndex = index;
+    }
+
+    // Also check for page type matches (crew, destination, technology)
+    if (currentPath.includes("/crew-") && item.link.includes("crew")) {
+      currentIndex = index;
+    } else if (
+      currentPath.includes("/destination-") &&
+      item.link.includes("destination")
+    ) {
+      currentIndex = index;
+    } else if (
+      currentPath.includes("/technology-") &&
+      item.link.includes("technology")
+    ) {
+      currentIndex = index;
+    }
+  });
+
+  return currentIndex;
+}
+
+// Highlight based on current page
+const currentPageIndex = detectCurrentPage();
+highlightingCurrentLink("a", currentPageIndex);
 
 async function fetchingFileData() {
   const gettingFile = await fetch("/data.json");
@@ -51,4 +115,10 @@ function highlightingClickedBtn(element, index) {
   btns[index].classList.add("bg-white", "text-gray-600");
 }
 
-export { dataSet, itemdINdex, triggerClickedBtn, highlightingClickedBtn };
+export {
+  dataSet,
+  itemdINdex,
+  triggerClickedBtn,
+  highlightingClickedBtn,
+  highlightingCurrentLink,
+};
