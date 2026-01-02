@@ -3,7 +3,8 @@ import {
   triggerClickedBtn,
   highlightingClickedBtn,
 } from "./index.js";
-import { itemdINdex } from "./index.js";
+import { itemdINdex } from "./utilis.js";
+import saveDataToBrowserMemory from "./utilis.js";
 
 const staffMembersSection = document.querySelector("#staff-members-section");
 
@@ -11,7 +12,7 @@ function crewPopulation(dataSet, index) {
   const { crew } = dataSet;
   const crewData = crew[index];
 
-  localStorage.setItem("crew", JSON.stringify({ crew, index }));
+  saveDataToBrowserMemory("crew", crew, index);
 
   staffMembersSection.innerHTML = "";
   const {

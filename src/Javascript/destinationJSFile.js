@@ -3,7 +3,8 @@ const destinationDetailsSection = document.querySelector("#dest-details");
 const imgDestination = document.querySelector("#dest-img");
 
 import { dataSet, highlightingCurrentLink } from "./index.js";
-import { itemdINdex } from "./index.js";
+import { itemdINdex } from "./utilis.js";
+import saveDataToBrowserMemory from "./utilis.js";
 
 const destinationList = ["moon", "mars", "europa", "titian"];
 
@@ -44,7 +45,7 @@ function displayDestanationDetails(dataSet, index) {
 
   highlightingCurrentBtn(index);
 
-  localStorage.setItem("destinations", JSON.stringify({ destinations, index }));
+  saveDataToBrowserMemory("destination", destinations, index);
 
   destinationDetailsSection.innerHTML = "";
   const {

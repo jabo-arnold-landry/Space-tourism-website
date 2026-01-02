@@ -94,12 +94,6 @@ async function fetchingFileData() {
 }
 const dataSet = await fetchingFileData();
 
-function itemdINdex(itemName) {
-  const destinationData = localStorage.getItem(itemName);
-  //get current index to display last visited page in localstorage
-  return destinationData ? JSON.parse(destinationData)["index"] : 0;
-}
-
 function triggerClickedBtn(element, btn, cb) {
   let btns = element.getElementsByTagName("button");
   const arr = [...btns];
@@ -117,7 +111,6 @@ function highlightingClickedBtn(element, index) {
 
 export {
   dataSet,
-  itemdINdex,
   triggerClickedBtn,
   highlightingClickedBtn,
   highlightingCurrentLink,

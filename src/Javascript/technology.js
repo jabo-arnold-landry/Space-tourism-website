@@ -3,7 +3,8 @@ import {
   highlightingClickedBtn,
   triggerClickedBtn,
 } from "./index.js";
-import { itemdINdex } from "./index.js";
+import { itemdINdex } from "./utilis.js";
+import saveDataToBrowserMemory from "./utilis.js";
 
 const technologyDetails = document.querySelector("#technology-details");
 const technologyList = document.querySelector("#technology-list");
@@ -37,7 +38,7 @@ function technologyPopulation(dataSet, index) {
   const { technology } = dataSet;
   const technologyData = technology[index];
 
-  localStorage.setItem("technology", JSON.stringify({ technology, index }));
+  saveDataToBrowserMemory("technology", technology, index)
 
   technologyListCreation(technology.length);
   highlightingClickedBtn(technologyList, index);
