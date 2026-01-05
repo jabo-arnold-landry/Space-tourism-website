@@ -1,12 +1,11 @@
 const destinationSwitcherBtns = document.querySelector("#destination-switcher");
 const destinationDetailsSection = document.querySelector("#dest-details");
 const imgDestination = document.querySelector("#dest-img");
+const destinationList = ["moon", "mars", "europa", "titian"];
 
 import { dataSet, highlightingCurrentLink } from "./index.js";
 import { itemdINdex } from "./utilis.js";
 import saveDataToBrowserMemory from "./utilis.js";
-
-const destinationList = ["moon", "mars", "europa", "titian"];
 
 highlightingCurrentLink("a", 1);
 function destinationSwitcherBtnsCreation() {
@@ -26,7 +25,6 @@ function destinationSwitcherBtnsCreation() {
       "relative"
     );
     btn.setAttribute("data-index", index);
-
     btn.innerHTML = `${destination}
                       <span
                         class="absolute top-6 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
@@ -44,7 +42,6 @@ function displayDestanationDetails(dataSet, index) {
   const destanationData = destinations[index];
 
   highlightingCurrentBtn(index);
-
   saveDataToBrowserMemory("destination", destinations, index);
 
   destinationDetailsSection.innerHTML = "";
@@ -86,7 +83,6 @@ const destinationIndex = itemdINdex("destinations");
 displayDestanationDetails(dataSet, destinationIndex);
 
 //event listeners section
-
 destinationSwitcherBtns.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
     const id = e.target.dataset.index;
@@ -97,12 +93,9 @@ destinationSwitcherBtns.addEventListener("click", (e) => {
 
 function highlightingCurrentBtn(index) {
   const btns = document.querySelectorAll("button");
-
   const spans = destinationSwitcherBtns.querySelectorAll("span");
 
   spans.forEach((span) => span.classList.add("scale-x-0"));
-
   const selectedBtnSpan = btns[index].querySelector("span");
-
   selectedBtnSpan.classList.remove("scale-x-0");
 }

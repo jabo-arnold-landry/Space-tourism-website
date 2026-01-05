@@ -39,7 +39,6 @@ function technologyPopulation(dataSet, index) {
   const technologyData = technology[index];
 
   saveDataToBrowserMemory("technology", technology, index)
-
   technologyListCreation(technology.length);
   highlightingClickedBtn(technologyList, index);
 

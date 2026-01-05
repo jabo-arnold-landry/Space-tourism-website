@@ -38,7 +38,6 @@ function highlightingCurrentLink(seletor, index) {
   const selectedBtn = btns[index];
   const selectedSpans = selectedBtn.querySelectorAll("span");
   const selectedUnderlineSpan = selectedSpans[selectedSpans.length - 1];
-
   selectedUnderlineSpan.classList.remove("scale-x-0");
   selectedUnderlineSpan.classList.add("scale-x-100");
 }
@@ -103,9 +102,7 @@ function triggerClickedBtn(element, btn, cb) {
 
 function highlightingClickedBtn(element, index) {
   const btns = element.querySelectorAll("button");
-
   btns.forEach((btn) => btn.classList.remove("bg-white", "text-gray-600"));
-
   btns[index].classList.add("bg-white", "text-gray-600");
 }
 
