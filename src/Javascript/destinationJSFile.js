@@ -55,8 +55,8 @@ function displayDestanationDetails(dataSet, index) {
 
   imgDestination.src = webp;
   destinationDetailsSection.innerHTML = `<div class="grid gap-5">
-              <strong class="text-6xl font-extralight uppercase">${name}</strong>
-              <p class="max-w-100 text-gray-400 pb-4">
+              <strong class="text-6xl font-extralight uppercase font-Bellefair text-center lg:text-left">${name}</strong>
+              <p class="max-w-100 text-gray-400 pb-4 text-center lg:text-left font-Barlow-ital:">
                ${description}
               </p>
             </div>
@@ -66,14 +66,14 @@ function displayDestanationDetails(dataSet, index) {
                 <p class="text-xs mb-2 text-gray-500 uppercase">
                   avg. distance
                 </p>
-                <p class="text-4xl text-gray-200 font-extralight">${distance}</p>
+                <p class="text-4xl text-gray-200 font-extralight font-Bellefair">${distance}</p>
               </div>
 
               <div>
                 <p class="text-xs mb-2 text-gray-500 uppercase">
                   est. travel time
                 </p>
-                <p class="text-4xl text-gray-200 font-extralight">${travel}</p>
+                <p class="text-4xl text-gray-200 font-extralight font-Bellefair">${travel}</p>
               </div>
             </div>`;
 }
