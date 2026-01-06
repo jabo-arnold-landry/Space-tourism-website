@@ -1,4 +1,9 @@
 const navLinkSection = document.querySelector("#nav-links");
+const humbergerMenuIcon = document.getElementById("humburger-icon");
+//hidding navLinks when clicking on humbergerMenu
+humbergerMenuIcon.addEventListener("click", () =>
+  navLinkSection.classList.toggle("opacity-100")
+);
 
 const linkList = [
   { link: "00 home", url: "/" },
