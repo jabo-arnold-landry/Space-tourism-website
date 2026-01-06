@@ -259,11 +259,29 @@
   .my-auto {
     margin-block: auto;
   }
+  .-mt-3 {
+    margin-top: calc(var(--spacing) * -3);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
+  }
+  .mt-32 {
+    margin-top: calc(var(--spacing) * 32);
+  }
+  .mt-40 {
+    margin-top: calc(var(--spacing) * 40);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -712,6 +730,11 @@
       top: calc(var(--spacing) * 14);
     }
   }
+  .sm\:mt-20 {
+    @media (width >= 40rem) {
+      margin-top: calc(var(--spacing) * 20);
+    }
+  }
   .sm\:flex {
     @media (width >= 40rem) {
       display: flex;
@@ -812,6 +835,11 @@
       margin-inline: calc(var(--spacing) * 0);
     }
   }
+  .md\:mt-32 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 32);
+    }
+  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
@@ -845,6 +873,11 @@
   .lg\:mx-0 {
     @media (width >= 64rem) {
       margin-inline: calc(var(--spacing) * 0);
+    }
+  }
+  .lg\:mt-40 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 40);
     }
   }
   .lg\:justify-start {
