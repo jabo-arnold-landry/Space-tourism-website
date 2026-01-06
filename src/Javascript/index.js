@@ -17,7 +17,7 @@ linkList.forEach((links) => {
                                     <span>${link.substring(0, 3)}</span> 
                                     ${link.substring(3)}
                                     <span
-                                        class="absolute top-14 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
+                                        class="absolute top-10 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center sm:top-14"
                                     >
                                     </span>
                                 </a>`;
