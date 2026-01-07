@@ -1,8 +1,4 @@
-import {
-  dataSet,
-  triggerClickedBtn,
-  highlightingClickedBtn,
-} from "./index.js";
+import { dataSet, triggerClickedBtn, highlightingClickedBtn } from "./index.js";
 import { itemdINdex } from "./utilis.js";
 import saveDataToBrowserMemory from "./utilis.js";
 
@@ -22,13 +18,13 @@ function crewPopulation(dataSet, index) {
     bio,
   } = crewData;
 
-  staffMembersSection.innerHTML = ` <section class="grid gap-10">
+  staffMembersSection.innerHTML = ` <section class="grid gap-10 font-Bellefair">
           <div class="grid gap-8">
             <div>
               <p class="text-gray-400 text-lg">${role}</p>
               <strong class="text-white text-5xl">${name}</strong>
             </div>
-            <p class="max-w-100 text-gray-400 pb-4">
+            <p class="max-w-100 text-gray-400 pb-4 font-Barlow">
              ${bio}
             </p>
           </div>
