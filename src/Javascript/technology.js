@@ -1,8 +1,4 @@
-import {
-  dataSet,
-  highlightingClickedBtn,
-  triggerClickedBtn,
-} from "./index.js";
+import { dataSet, highlightingClickedBtn, triggerClickedBtn } from "./index.js";
 import { itemdINdex } from "./utilis.js";
 import saveDataToBrowserMemory from "./utilis.js";
 
@@ -38,7 +34,7 @@ function technologyPopulation(dataSet, index) {
   const { technology } = dataSet;
   const technologyData = technology[index];
 
-  saveDataToBrowserMemory("technology", technology, index)
+  saveDataToBrowserMemory("technology", technology, index);
   technologyListCreation(technology.length);
   highlightingClickedBtn(technologyList, index);
 
@@ -50,7 +46,7 @@ function technologyPopulation(dataSet, index) {
   } = technologyData;
 
   technologyDetails.innerHTML = `<div>
-              <p class="text-gray-400 text-base capitalize">
+              <p class="text-gray-400 text-base capitalize font-Barlow">
                 The terminology...
               </p>
               <strong class="font-bold text-5xl">${name}</strong>
