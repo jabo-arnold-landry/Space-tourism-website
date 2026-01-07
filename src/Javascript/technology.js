@@ -45,13 +45,13 @@ function technologyPopulation(dataSet, index) {
     description,
   } = technologyData;
 
-  technologyDetails.innerHTML = `<div>
-              <p class="text-gray-400 text-base capitalize font-Barlow">
+  technologyDetails.innerHTML = `<div class="font-Bellefair">
+              <p class="text-gray-400 text-base capitalize">
                 The terminology...
               </p>
               <strong class="font-bold text-5xl">${name}</strong>
             </div>
-            <p class="max-w-lg md:max-w-160 text-gray-400">
+            <p class="max-w-lg md:max-w-160 text-gray-400 text-center lg:text-left text-pretty">
               ${description}
             </p>`;
 
@@ -66,7 +66,7 @@ function technologyPopulation(dataSet, index) {
           <img
             src="${portrait}"
             alt="img"
-            class="size-96"
+            class="w-full text-center"
           />`;
 }
 
