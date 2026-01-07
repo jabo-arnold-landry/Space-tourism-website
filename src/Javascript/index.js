@@ -9,7 +9,7 @@ const linkList = [
   { link: "00 home", url: "/" },
   { link: "01 destination", url: "/src/pages/destination-europa.html" },
   { link: "02 crew", url: "/src/pages/crew-commander.html" },
-  { link: "03 technology", url: "technology-capsule.html" },
+  { link: "03 technology", url: "/src/pages/technology-capsule.html" },
 ];
 
 navLinkSection.textContent = "";
