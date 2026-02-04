@@ -2,7 +2,7 @@ const navLinkSection = document.querySelector("#nav-links");
 const humbergerMenuIcon = document.getElementById("humburger-icon");
 //hidding navLinks when clicking on humbergerMenu
 humbergerMenuIcon.addEventListener("click", () =>
-  navLinkSection.classList.toggle("opacity-100")
+  navLinkSection.classList.toggle("opacity-100"),
 );
 
 const linkList = [
@@ -117,3 +117,10 @@ export {
   highlightingClickedBtn,
   highlightingCurrentLink,
 };
+
+if ("serviceWorker" in window.navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then((register) => console.log(register))
+    .catch((err) => console.log(err));
+}
