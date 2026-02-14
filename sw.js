@@ -5,7 +5,7 @@ const resourcesToCache = [
   "/src/output.css",
 ];
 
-const cacheName = "version-1.0";
+const cacheName = "version-2.2";
 self.addEventListener("install", (e) => {
   console.log(e);
   e.waitUntil(
@@ -20,16 +20,14 @@ self.addEventListener("install", (e) => {
 
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then((allCachesNames) => {
+    caches.keys().then((arrOfkeys) => {
       return Promise.all(
-        allCachesNames
-          .filter((cache) => cache !== cacheName || cache === "dynamic-cache")
+        arrOfkeys
+          .filter((key) => key !== cacheName)
           .map((key) => caches.delete(key)),
       )
-        .then(() => console.log("cleared successful"))
-        .catch((err) =>
-          console.log("failed to delete resources from cache: ", err),
-        );
+        .then((res) => console.log("res"))
+        .catch((err) => console.log(`unable to delete a cache`, err));
     }),
   );
 });
@@ -37,15 +35,7 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     caches.match(e.request).then((response) => {
-      return (
-        response ||
-        fetch(e.request).then((response) => {
-          return caches.open("dynamic-cache").then((cache) => {
-            cache.put(e.request.url, response.clone());
-            return response;
-          });
-        })
-      );
+      return response || fetch(e.request);
     }),
   );
 });
