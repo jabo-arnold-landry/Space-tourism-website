@@ -5,7 +5,7 @@ const resourcesToCache = [
   "/src/output.css",
 ];
 
-const cacheName = "version-2.2";
+const cacheName = "version-2.3";
 self.addEventListener("install", (e) => {
   console.log(e);
   e.waitUntil(
